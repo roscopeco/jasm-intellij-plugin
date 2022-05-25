@@ -1,18 +1,43 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.roscopeco.jasmintellijplugin</id>
-    <name>jasm-intellij-plugin</name>
+    <id>com.roscopeco.jasm.intellij</id>
+    <name>Jasm</name>
     <vendor>roscopeco</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.roscopeco.jasmintellijplugin.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.roscopeco.jasmintellijplugin.services.MyProjectService"/>
+        <applicationService serviceImplementation="com.roscopeco.jasm.intellij.services.MyApplicationService"/>
+        <projectService serviceImplementation="com.roscopeco.jasm.intellij.services.JasmProjectService"/>
+
+        <fileType
+                name="JASM File"
+                implementationClass="com.roscopeco.jasm.intellij.filetypes.JasmFileType"
+                fieldName="INSTANCE"
+                language="Jasm"
+                extensions="jasm"/>
+
+        <lang.syntaxHighlighterFactory
+                language="Jasm"
+                implementationClass="com.roscopeco.jasm.intellij.syntax.JasmSyntaxHighlighterFactory"/>
+
+        <lang.parserDefinition
+                language="Jasm"
+                implementationClass="com.roscopeco.jasm.intellij.parser.JasmParserDefinition"/>
+
+        <lang.ast.factory
+                language="Jasm"
+                implementationClass="com.roscopeco.jasm.intellij.parser.JasmASTFactory"/>
+
+        <lang.commenter
+                language="Jasm"
+                implementationClass="com.roscopeco.jasm.intellij.editor.JasmCommenter"/>
+
+        <colorSettingsPage implementation="com.roscopeco.jasm.intellij.settings.JasmColorSettingsPage"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.roscopeco.jasmintellijplugin.listeners.MyProjectManagerListener"
+        <listener class="com.roscopeco.jasm.intellij.listeners.JasmProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
 </idea-plugin>

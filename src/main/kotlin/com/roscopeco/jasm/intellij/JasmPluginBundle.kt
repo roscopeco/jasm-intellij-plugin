@@ -1,11 +1,11 @@
-package com.github.roscopeco.jasmintellijplugin
+package com.roscopeco.jasm.intellij
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls
 import org.jetbrains.annotations.PropertyKey
 
 @NonNls
-private const val BUNDLE = "messages.MyBundle"
+private const val BUNDLE = "messages.JasmPluginBundle"
 
 object MyBundle : DynamicBundle(BUNDLE) {
 

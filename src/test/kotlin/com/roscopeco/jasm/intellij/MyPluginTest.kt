@@ -1,4 +1,4 @@
-package com.github.roscopeco.jasmintellijplugin
+package com.roscopeco.jasm.intellij
 
 import com.intellij.ide.highlighter.XmlFileType
 import com.intellij.psi.xml.XmlFile
