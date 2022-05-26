@@ -29,6 +29,14 @@
                 language="Jasm"
                 implementationClass="com.roscopeco.jasm.intellij.parser.JasmASTFactory"/>
 
+        <lang.braceMatcher
+                language="Jasm"
+                implementationClass="com.roscopeco.jasm.intellij.editor.JasmBraceMatcher"/>
+
+        <lang.formatter
+                language="Jasm"
+                implementationClass="com.roscopeco.jasm.intellij.editor.JasmFormattingModelBuilder"/>
+
         <lang.commenter
                 language="Jasm"
                 implementationClass="com.roscopeco.jasm.intellij.editor.JasmCommenter"/>

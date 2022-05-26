@@ -12,7 +12,9 @@ import com.intellij.psi.tree.TokenSet
 import com.roscopeco.jasm.antlr.JasmLexer
 import com.roscopeco.jasm.antlr.JasmParser
 import com.roscopeco.jasm.intellij.JasmLanguage
+import com.roscopeco.jasm.intellij.psi.FieldSubtree
 import com.roscopeco.jasm.intellij.psi.JasmPSIFileRoot
+import com.roscopeco.jasm.intellij.psi.MethodSubtree
 import org.antlr.intellij.adaptor.lexer.ANTLRLexerAdaptor
 import org.antlr.intellij.adaptor.lexer.PSIElementTypeFactory
 import org.antlr.intellij.adaptor.lexer.RuleIElementType
@@ -20,7 +22,6 @@ import org.antlr.intellij.adaptor.lexer.TokenIElementType
 import org.antlr.intellij.adaptor.parser.ANTLRParserAdaptor
 import org.antlr.intellij.adaptor.psi.ANTLRPsiNode
 import org.antlr.v4.runtime.Parser
-
 
 class JasmParserDefinition : ParserDefinition {
     companion object {
@@ -66,7 +67,17 @@ class JasmParserDefinition : ParserDefinition {
 
     override fun getFileNodeType(): IFileElementType = FILE
 
-    override fun createElement(node: ASTNode): PsiElement = ANTLRPsiNode(node)
+    override fun createElement(node: ASTNode): PsiElement = when (val elementType = node.elementType) {
+        is TokenIElementType -> ANTLRPsiNode(node)
+        !is RuleIElementType -> ANTLRPsiNode(node)
+        else -> {
+            when (elementType.ruleIndex) {
+                JasmParser.RULE_field           -> FieldSubtree(node)
+                JasmParser.RULE_method          -> MethodSubtree(node)
+                else -> ANTLRPsiNode(node)
+            }
+        }
+    }
 
     override fun createFile(viewProvider: FileViewProvider): PsiFile = JasmPSIFileRoot(viewProvider)
 
