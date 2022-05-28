@@ -1,10 +1,10 @@
 package com.roscopeco.jasm.intellij.services
 
-import com.roscopeco.jasm.intellij.MyBundle
+import com.roscopeco.jasm.intellij.JasmBundle
 
 class MyApplicationService {
 
     init {
-        println(MyBundle.message("applicationService"))
+        println(JasmBundle.message("applicationService"))
     }
 }

@@ -13,7 +13,7 @@ import com.roscopeco.jasm.antlr.JasmLexer
 import com.roscopeco.jasm.antlr.JasmParser
 import com.roscopeco.jasm.intellij.JasmLanguage
 import com.roscopeco.jasm.intellij.psi.FieldSubtree
-import com.roscopeco.jasm.intellij.psi.JasmPSIFileRoot
+import com.roscopeco.jasm.intellij.psi.JasmPsiFileRoot
 import com.roscopeco.jasm.intellij.psi.MethodSubtree
 import org.antlr.intellij.adaptor.lexer.ANTLRLexerAdaptor
 import org.antlr.intellij.adaptor.lexer.PSIElementTypeFactory
@@ -79,7 +79,7 @@ class JasmParserDefinition : ParserDefinition {
         }
     }
 
-    override fun createFile(viewProvider: FileViewProvider): PsiFile = JasmPSIFileRoot(viewProvider)
+    override fun createFile(viewProvider: FileViewProvider): PsiFile = JasmPsiFileRoot(viewProvider)
 
     override fun spaceExistenceTypeBetweenTokens(left: ASTNode?, right: ASTNode?): ParserDefinition.SpaceRequirements
         = ParserDefinition.SpaceRequirements.MAY

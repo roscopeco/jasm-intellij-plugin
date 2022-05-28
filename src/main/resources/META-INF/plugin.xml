@@ -17,6 +17,8 @@
                 language="Jasm"
                 extensions="jasm"/>
 
+        <fileTypeIndentOptionsProvider implementation=""/>
+
         <lang.syntaxHighlighterFactory
                 language="Jasm"
                 implementationClass="com.roscopeco.jasm.intellij.syntax.JasmSyntaxHighlighterFactory"/>
@@ -28,6 +30,10 @@
         <lang.ast.factory
                 language="Jasm"
                 implementationClass="com.roscopeco.jasm.intellij.parser.JasmASTFactory"/>
+
+        <lang.quoteHandler
+                language="Jasm"
+                implementationClass="com.roscopeco.jasm.intellij.editor.JasmQuoteHandler"/>
 
         <lang.braceMatcher
                 language="Jasm"
@@ -41,7 +47,18 @@
                 language="Jasm"
                 implementationClass="com.roscopeco.jasm.intellij.editor.JasmCommenter"/>
 
+        <lang.refactoringSupport
+                language="Jasm"
+                implementationClass="com.roscopeco.jasm.intellij.editor.JasmRefactoringSupportProvider"/>
+
         <colorSettingsPage implementation="com.roscopeco.jasm.intellij.settings.JasmColorSettingsPage"/>
+
+        <codeStyleSettingsProvider
+                implementation="com.roscopeco.jasm.intellij.settings.codestyle.JasmCodeStyleSettingsProvider"/>
+
+        <langCodeStyleSettingsProvider
+                implementation="com.roscopeco.jasm.intellij.settings.codestyle.JasmLanguageCodeStyleSettingsProvider"/>
+
     </extensions>
 
     <applicationListeners>

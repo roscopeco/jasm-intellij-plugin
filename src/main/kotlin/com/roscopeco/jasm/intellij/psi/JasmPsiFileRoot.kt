@@ -11,11 +11,11 @@ import org.antlr.intellij.adaptor.SymtabUtils
 import org.antlr.intellij.adaptor.psi.ScopeNode
 import javax.swing.Icon
 
-class JasmPSIFileRoot(private val theViewProvider: FileViewProvider) : PsiFileBase(theViewProvider, JasmLanguage.INSTANCE), ScopeNode {
+class JasmPsiFileRoot(private val theViewProvider: FileViewProvider) : PsiFileBase(theViewProvider, JasmLanguage.INSTANCE), ScopeNode {
     override fun getContext(): ScopeNode? = null
 
     override fun resolve(element: PsiNamedElement?): PsiElement?
-        = SymtabUtils.resolve(this, JasmLanguage.INSTANCE, element, "class/classname")
+        = SymtabUtils.resolve(this, JasmLanguage.INSTANCE, element, "class/classbody/member/*/membername")
 
     override fun getFileType(): FileType = JasmFileType.INSTANCE
 
