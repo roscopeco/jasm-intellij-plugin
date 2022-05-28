@@ -22,12 +22,11 @@ version = properties("pluginVersion")
 // Configure project's dependencies
 repositories {
     mavenCentral()
-    mavenLocal()
 }
 
 dependencies {
     implementation("org.antlr:antlr4-intellij-adaptor:0.1")
-    implementation("com.roscopeco.jasm:jasm:0.3.0-SNAPSHOT")
+    implementation("com.roscopeco.jasm:jasm:0.3.0")
 }
 
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
