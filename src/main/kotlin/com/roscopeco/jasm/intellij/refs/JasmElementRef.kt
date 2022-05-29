@@ -19,8 +19,7 @@ abstract class JasmElementRef(element: NamePsiNode) : PsiReferenceBase<NamePsiNo
     override fun resolve(): PsiElement? {
         val context = myElement.context
         return if (context is ScopeNode) {
-            val resolved = context.resolve(myElement)
-            return resolved
+            context.resolve(myElement)
         } else {
             null
         }

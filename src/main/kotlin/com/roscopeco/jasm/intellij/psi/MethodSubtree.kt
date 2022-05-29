@@ -7,7 +7,6 @@ import com.roscopeco.jasm.antlr.JasmParser
 import com.roscopeco.jasm.intellij.JasmLanguage
 import com.roscopeco.jasm.intellij.parser.JasmParserDefinition.Companion.RULE_ELEMENT_TYPES
 import org.antlr.intellij.adaptor.SymtabUtils
-import org.antlr.intellij.adaptor.psi.ANTLRPsiNode
 import org.antlr.intellij.adaptor.psi.IdentifierDefSubtree
 import org.antlr.intellij.adaptor.psi.ScopeNode
 

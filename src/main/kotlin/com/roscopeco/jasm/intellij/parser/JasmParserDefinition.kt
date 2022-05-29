@@ -42,18 +42,18 @@ class JasmParserDefinition : ParserDefinition {
 
         val FILE = IFileElementType(JasmLanguage.INSTANCE)
 
-        val COMMENTS = PSIElementTypeFactory.createTokenSet(
+        val COMMENTS: TokenSet = PSIElementTypeFactory.createTokenSet(
             JasmLanguage.INSTANCE,
             JasmLexer.COMMENT,
             JasmLexer.BLOCK_COMMENT
         )
 
-        val WHITESPACE = PSIElementTypeFactory.createTokenSet(
+        val WHITESPACE: TokenSet = PSIElementTypeFactory.createTokenSet(
             JasmLanguage.INSTANCE,
             JasmLexer.SPACE
         )
 
-        val STRINGS = PSIElementTypeFactory.createTokenSet(
+        val STRINGS: TokenSet = PSIElementTypeFactory.createTokenSet(
             JasmLanguage.INSTANCE,
             JasmLexer.STRING
         )

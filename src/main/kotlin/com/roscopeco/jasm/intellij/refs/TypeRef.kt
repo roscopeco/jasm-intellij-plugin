@@ -1,7 +1,6 @@
 package com.roscopeco.jasm.intellij.refs
 
 import com.intellij.psi.PsiElement
-import com.roscopeco.jasm.intellij.psi.FieldSubtree
 import com.roscopeco.jasm.intellij.psi.MethodSubtree
 import com.roscopeco.jasm.intellij.psi.NamePsiNode
 
