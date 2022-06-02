@@ -4,6 +4,7 @@ import com.intellij.openapi.editor.colors.TextAttributesKey
 import com.intellij.openapi.options.colors.AttributesDescriptor
 import com.intellij.openapi.options.colors.ColorDescriptor
 import com.intellij.openapi.options.colors.ColorSettingsPage
+import com.roscopeco.jasm.intellij.JasmIcons
 import com.roscopeco.jasm.intellij.filetypes.JasmFileType
 import com.roscopeco.jasm.intellij.syntax.JasmSyntaxHighlighter
 
@@ -32,7 +33,7 @@ class JasmColorSettingsPage : ColorSettingsPage {
 
     override fun getDisplayName() = "JASM"
 
-    override fun getIcon() = JasmFileType.ICON
+    override fun getIcon() = JasmIcons.classIcon
 
     override fun getHighlighter() = JasmSyntaxHighlighter()
 

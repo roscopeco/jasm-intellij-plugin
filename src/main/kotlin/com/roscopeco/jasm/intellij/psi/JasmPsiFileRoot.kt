@@ -5,6 +5,7 @@ import com.intellij.openapi.fileTypes.FileType
 import com.intellij.psi.FileViewProvider
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiNamedElement
+import com.roscopeco.jasm.intellij.JasmIcons
 import com.roscopeco.jasm.intellij.JasmLanguage
 import com.roscopeco.jasm.intellij.filetypes.JasmFileType
 import org.antlr.intellij.adaptor.SymtabUtils
@@ -19,7 +20,7 @@ class JasmPsiFileRoot(theViewProvider: FileViewProvider) : PsiFileBase(theViewPr
 
     override fun getFileType(): FileType = JasmFileType.INSTANCE
 
-    override fun getIcon(flags: Int): Icon = JasmFileType.ICON
+    override fun getIcon(flags: Int): Icon = JasmIcons.classIcon
 
     override fun toString(): String {
         return "JASM Source file"
