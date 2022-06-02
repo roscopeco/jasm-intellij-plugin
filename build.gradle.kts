@@ -26,7 +26,7 @@ repositories {
 
 dependencies {
     implementation("org.antlr:antlr4-intellij-adaptor:0.1")
-    implementation("com.roscopeco.jasm:jasm:0.3.0")
+    implementation("com.roscopeco.jasm:jasm:0.4.0")
 }
 
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin

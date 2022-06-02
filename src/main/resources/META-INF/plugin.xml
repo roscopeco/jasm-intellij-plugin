@@ -51,6 +51,10 @@
                 language="Jasm"
                 implementationClass="com.roscopeco.jasm.intellij.editor.JasmRefactoringSupportProvider"/>
 
+        <externalAnnotator
+                language="Jasm"
+                implementationClass="com.roscopeco.jasm.intellij.annotator.JasmExternalAnnotator"/>
+
         <colorSettingsPage implementation="com.roscopeco.jasm.intellij.settings.JasmColorSettingsPage"/>
 
         <codeStyleSettingsProvider
