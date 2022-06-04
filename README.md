@@ -15,6 +15,10 @@ Supports:
 
 <!-- Plugin description end -->
 
+## Screenshot
+
+![](images/screenshot.png)
+
 ## Installation
 
 - Using IDE built-in plugin system:
