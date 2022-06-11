@@ -69,6 +69,7 @@ class JasmSyntaxHighlighter : SyntaxHighlighterBase() {
             JasmLexer.SEMI -> badToken
             JasmLexer.COMMA -> COMMA
             in JasmLexer.CLASS..JasmLexer.VOLATILE -> KEYWORD
+            in JasmLexer.TRY..JasmLexer.EXCEPTION -> KEYWORD
             in JasmLexer.AALOAD..JasmLexer.CONSTDYNAMIC -> OPCODE
             in JasmLexer.TYPE_VOID..JasmLexer.TYPE_BOOL -> KEYWORD
             JasmLexer.TRUE, JasmLexer.FALSE -> KEYWORD

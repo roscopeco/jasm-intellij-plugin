@@ -49,9 +49,13 @@ class JasmExternalAnnotator : ExternalAnnotator<JasmExternalAnnotator.ParsedUnit
         val collector = StandardErrorCollector()
         val assembler = JasmAssemblingVisitor(EMPTY_CLASS_VISITOR, collectedInfo.unitName, collector)
 
-        assembler.visit(collectedInfo.tree)
-
-        return collector.getErrors()
+        return try {
+            assembler.visit(collectedInfo.tree)
+            collector.getErrors()
+        } catch (e: Exception) {
+            // prevent this leaking out to the IDE
+            emptyList()
+        }
     }
 
     override fun apply(file: PsiFile, annotationResult: List<BaseError>, holder: AnnotationHolder) {

@@ -45,6 +45,8 @@ open class JasmBlock(node: ASTNode, wrap: Wrap?, private val spacingBuilder: Spa
                 JasmParser.RULE_stat_block,
                 JasmParser.RULE_method_arguments,
                 JasmParser.RULE_insn_invokedynamic,
+                JasmParser.RULE_try_catch_block,
+                JasmParser.RULE_catch_block,
                 JasmParser.RULE_const_args -> Indent.getNormalIndent()
                 else -> Indent.getNoneIndent()
             }
