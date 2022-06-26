@@ -2,3 +2,6 @@
 .idea
 .qodana
 build
+*.iml
+*.ipr
+*.iws
