@@ -24,6 +24,7 @@ open class JasmBlock(node: ASTNode, wrap: Wrap?, private val spacingBuilder: Spa
                 JasmParser.RULE_method_arguments,
                 JasmParser.RULE_stat,
                 JasmParser.RULE_invokedynamic_body,
+                JasmParser.RULE_annotation,
                 JasmParser.RULE_const_args -> Indent.getNormalIndent()
 
                 JasmParser.RULE_label -> Indent.getLabelIndent()

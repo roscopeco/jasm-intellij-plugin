@@ -13,7 +13,6 @@ import org.antlr.intellij.adaptor.lexer.ANTLRLexerAdaptor
 import org.antlr.intellij.adaptor.lexer.PSIElementTypeFactory
 import org.antlr.intellij.adaptor.lexer.TokenIElementType
 
-
 class JasmSyntaxHighlighter : SyntaxHighlighterBase() {
     companion object {
         val ID: TextAttributesKey
@@ -42,6 +41,8 @@ class JasmSyntaxHighlighter : SyntaxHighlighterBase() {
             = createTextAttributesKey("JASM_NUMBER", DefaultLanguageHighlighterColors.NUMBER)
         val OPCODE: TextAttributesKey
             = createTextAttributesKey("JASM_OPCODE", DefaultLanguageHighlighterColors.FUNCTION_CALL)
+        val ANNOTATION: TextAttributesKey
+            = createTextAttributesKey("JASM_ANNOTATION", DefaultLanguageHighlighterColors.METADATA)
 
         init {
             PSIElementTypeFactory.defineLanguageIElementTypes(
@@ -74,11 +75,12 @@ class JasmSyntaxHighlighter : SyntaxHighlighterBase() {
             in JasmLexer.TYPE_VOID..JasmLexer.TYPE_BOOL -> KEYWORD
             JasmLexer.TRUE, JasmLexer.FALSE -> KEYWORD
             JasmLexer.INIT, JasmLexer.CLINIT -> KEYWORD
-            JasmLexer.LABEL, JasmLexer.NAME, JasmLexer.QNAME -> ID
+            JasmLexer.LABEL, JasmLexer.NAME, JasmLexer.QNAME, JasmLexer.LITERAL_NAME -> ID
             JasmLexer.INT, JasmLexer.FLOAT -> NUMBER
             JasmLexer.STRING -> STRING
             JasmLexer.COMMENT -> LINE_COMMENT
             JasmLexer.BLOCK_COMMENT -> BLOCK_COMMENT
+            JasmLexer.ANNOTATION_NAME -> ANNOTATION
             JasmLexer.OTHER -> badToken
             else -> return emptyKeys
         }
