@@ -7,17 +7,12 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.roscopeco.jasm.intellij.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.roscopeco.jasm.intellij.services.JasmProjectService"/>
-
         <fileType
                 name="JASM File"
                 implementationClass="com.roscopeco.jasm.intellij.filetypes.JasmFileType"
                 fieldName="INSTANCE"
                 language="Jasm"
                 extensions="jasm"/>
-
-        <fileTypeIndentOptionsProvider implementation=""/>
 
         <lang.syntaxHighlighterFactory
                 language="Jasm"
@@ -64,9 +59,4 @@
                 implementation="com.roscopeco.jasm.intellij.settings.codestyle.JasmLanguageCodeStyleSettingsProvider"/>
 
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.roscopeco.jasm.intellij.listeners.JasmProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>
