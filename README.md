@@ -1,5 +1,7 @@
 # jasm-intellij-plugin
 
+> **note**: This repository is archived and the plugin is discontinuted. Development of JASM itself will continue but I cannot commit to keeping the plugin up to date.
+
 ![Build](https://github.com/roscopeco/jasm-intellij-plugin/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/19303.svg)](https://plugins.jetbrains.com/plugin/19303)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/19303.svg)](https://plugins.jetbrains.com/plugin/19303)
